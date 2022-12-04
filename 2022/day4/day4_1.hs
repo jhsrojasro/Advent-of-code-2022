@@ -6,7 +6,6 @@ main = do
     handle <- openFile "input" ReadMode
     contents <- hGetContents handle
     let ranges = [ [[(read . head . head) ranges :: Int, (read . last . head) ranges :: Int] ,[(read . head . last) ranges :: Int, (read . last . last) ranges :: Int]] | ranges <- (map (map (splitOn "-") . splitOn ",") . splitOn "\n") contents]
-    (print . length) [ range | range <- ranges, rangeOverlap range]
+    (print . length) [ range | range <- ranges, rangeContained ((head . head) range) ((last . head) range) ((head . last) range) ((last . last) range) ]
 
-rangeOverlap ranges = (head . head) ranges `elem` [(head . last) ranges .. (last . last) ranges] || (last . head) ranges `elem` [(head . last) ranges .. (last . last) ranges]
-                    || (head . last) ranges `elem` [(head . head) ranges .. (last . head) ranges] || (last . last) ranges `elem` [(head . head) ranges .. (last . head) ranges]
+rangeContained x1 x2 y1 y2 = x1 >= y1 && x2 <= y2 || y1 >= x1 && y2 <= x2 
