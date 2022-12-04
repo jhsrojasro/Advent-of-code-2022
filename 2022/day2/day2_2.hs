@@ -4,7 +4,7 @@ import Data.List.Split
 main = do
     handle <- openFile "input" ReadMode
     contents <- hGetContents handle
-    (print . sum) [roundValue round | round <- splitOn "\n" contents ]
+    print $ sum [roundValue round | round <- splitOn "\n" contents ]
 
 roundValue :: String -> Integer
 roundValue round = winner (head round) (last round) + resultValue (last round)

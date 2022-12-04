@@ -5,8 +5,7 @@ import Data.Maybe
 main = do
     handle <- openFile "input" ReadMode
     contents <- hGetContents handle
-    (print . sum . map (priorityRuckSack . splitAtHalf) . splitOn "\n") contents
-
+    print $ sum $ map (priorityRuckSack . splitAtHalf) $ splitOn "\n" contents
 
 splitAtHalf rucksack = splitAt (length rucksack `div` 2) rucksack
 

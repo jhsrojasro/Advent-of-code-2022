@@ -5,7 +5,7 @@ import Data.Maybe
 main = do
     handle <- openFile "input" ReadMode
     contents <- hGetContents handle
-    (print . sum . map priorityRuckSack . chunksOf 3 . splitOn "\n") contents
+    print $ sum $ map priorityRuckSack $ chunksOf 3 $ splitOn "\n" contents
 
 priorityRuckSack rucksack = priority (head ([ x | x <- head rucksack, y <- rucksack !! 1 , z <- rucksack !! 2 , x == y && x == z]))
 
