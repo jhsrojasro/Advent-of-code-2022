@@ -1,0 +1,7 @@
+.gitignore
+.vscode
+*.hi
+*.o
+input
+day*_1
+day*_2
