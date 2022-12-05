@@ -1,6 +1,8 @@
 .vscode
 *.hi
 *.o
+*.dyn_hi
+*.dyn_0
 input
 day*_1
 day*_2
