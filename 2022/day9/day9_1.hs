@@ -2,10 +2,8 @@ import System.IO
 import qualified Data.Set as Set
 import Data.List.Unique
 
-
 data Pos = Pos Int Int deriving (Show, Ord, Eq)
 data State = State (Set.Set Pos) Pos Pos deriving(Show)
-
 
 main = do
     handle <- openFile "input" ReadMode
