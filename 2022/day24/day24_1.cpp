@@ -94,11 +94,6 @@ long long solve(int i, int j, int n, int m){
     visited[i][j][n][m] = true;
     long long min_value = INF;
     int next_n = (n+1)%N_V, next_m = (m+1)%M_H;
-    // pair<int,int> up = make_pair(i-1,j);
-    // pair<int,int> down = make_pair(i+1,j);
-    // pair<int,int> left = make_pair(i,j-1);
-    // pair<int,int> right = make_pair(i,j+1);
-
     if(i<N-1) min_value = min(min_value, 1 + solve(i+1,j,next_n, next_m)); //go down
     if(j<M_H) min_value = min(min_value, 1 + solve(i,j+1, next_n, next_m)); // go right
     min_value = min(min_value, 1 + solve(i,j,next_n, next_m)); //Stay
