@@ -56,4 +56,4 @@ learned to use update functions with <em>fold</em>.
 I solved the first part using C++, a pretty strighforward implementation problem, i implemented each movement to the sides and down for each figure. Part two requires a O(1) or O(log) algorithm, it is necessary to find and pattern to predict the final result but i have not found it yet.
 
 ## Day 18
-First part is trivial using a Set, second part was the real challenge, i took the limits of each axe (x,y,z) and iterated the empty blocks in this bounded space inserting them in a Set. I simulated a recursive function with a stack to find Air Pockets and count the number of surfaces to discount. If i found an Air Pocket i erase all the blocks of this pocker from the set of air blocks to process.
+First part is trivial using a Set, second part was the real challenge, i took the limits of each axe (x,y,z) and iterated the empty blocks in this bounded space inserting them in a Set. I simulated a recursive function with a stack to find Air Pockets and count the number of surfaces to discount. If it founds an Air Pocket it erases all the blocks of this pocker from the set of air blocks to process.
